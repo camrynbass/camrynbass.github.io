@@ -28,7 +28,7 @@ order: 4
     }
 </style>
 
-# <img src="images/profile.jpg" alt="Cam Bass" style="width:200px;border-radius:50%;border:4px solid #88A376;">
+# <img src="images/profile.png" alt="Cam Bass" style="width:200px;border-radius:50%;border:4px solid #88A376;">
 
 # Cam Bass  
 **Computational Genetic Biologist**  
