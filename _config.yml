@@ -22,7 +22,7 @@ description: >- # used by seo meta and the atom feed
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
-url: "https://github.com/camrynbass/"
+url: "https://camrynbass.github.io"
 
 github:
   username: camrynbass # change to your GitHub username
@@ -94,7 +94,7 @@ theme_mode: # [light | dark]
 # will be added to all media resources (site avatar, posts' images, audio and video files) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-cdn:
+cdn: # Leave empty unless using a CDN
 
 # the avatar on sidebar, support local or CORS resources
 avatar: images/profile.jpeg
@@ -149,7 +149,7 @@ pwa:
 paginate: 10
 
 # The base URL of your site
-baseurl: "https://camrynbass.github.io/"
+baseurl: "" # Ensure this is empty for GitHub Pages
 
 # ------------ The following options are not recommended to be modified ------------------
 
