@@ -1,18 +1,18 @@
-# Bundler cache
-.bundle
-vendor
+# Bundler files
+.bundle/
+vendor/
 Gemfile.lock
 
-# Jekyll cache
-.jekyll-cache
-.jekyll-metadata
+# Jekyll build files
 _site/
+.jekyll-cache/
+.jekyll-metadata
 
 # RubyGems
 *.gem
 
-# NPM dependencies
-node_modules
+# Node.js files
+node_modules/
 package-lock.json
 
 # IDE configurations
@@ -25,3 +25,7 @@ package-lock.json
 # Misc
 _sass/vendors
 assets/js/dist
+
+# Ignore compiled CSS and JS files
+assets/css/*.css
+assets/js/dist/*.js

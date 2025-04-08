@@ -8,64 +8,16 @@ title: Cam Bass | Computational Genetic Biologist
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cam Bass | Computational Genetic Biologist</title>
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
   </head>
   <body>
     <!-- Profile Section -->
     <section class="profile">
-      <img src="{{ site.baseurl }}/images/profile.jpg" alt="Cam Bass" class="profile-img">
+      <img src="/images/profile.jpg" alt="Cam Bass" class="profile-img">
       <h1>Cam Bass</h1>
       <h2 style="color: var(--sage);">Computational Genetic Biologist</h2>
       <div class="divider"></div>
       <p>UVic Biology Co-op Student | Biotech Innovator | Open Science Advocate</p>
     </section>
-
-    <!-- Decorative Element -->
-    <div class="leaf-decor"></div>
-    <div class="divider"></div>
-
-    <!-- CV Sections -->
-    <section class="cv-container">
-      <div class="cv-section">
-        <div class="cv-header" onclick="toggleCV('education')">
-          <h3>Education</h3>
-          <span>▼</span>
-        </div>
-        <div class="cv-content" id="education">
-          <p>
-            University of Victoria<br>
-            B.Sc. Biology Co-op, Software Development Minor<br>
-            Expected Graduation: May 2025
-          </p>
-        </div>
-      </div>
-
-      <div class="cv-section">
-        <div class="cv-header" onclick="toggleCV('research')">
-          <h3>Research Experience</h3>
-          <span>▼</span>
-        </div>
-        <div class="cv-content" id="research">
-          <!-- Add your research experience content here -->
-        </div>
-      </div>
-
-      <div class="cv-section">
-        <div class="cv-header" onclick="toggleCV('awards')">
-          <h3>Awards & Honors</h3>
-          <span>▼</span>
-        </div>
-        <div class="cv-content" id="awards">
-          <!-- Add your awards content here -->
-        </div>
-      </div>
-    </section>
-
-    <script>
-      function toggleCV(sectionId) {
-        const content = document.getElementById(sectionId);
-        content.style.maxHeight = content.style.maxHeight ? null : `${content.scrollHeight}px`;
-      }
-    </script>
   </body>
 </html>

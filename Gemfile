@@ -2,14 +2,8 @@
 
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.4.1"
-gem "jekyll-seo-tag"
-gem "jekyll-theme-chirpy", "~> 7.2", ">= 7.2.4"
+gem "github-pages", group: :jekyll_plugins
 gem "webrick", "~> 1.7" # Required for local development
-
-group :jekyll_plugins do
-  gem "github-pages", group: :jekyll_plugins
-end
 
 gem "html-proofer", "~> 5.0", group: :test
 

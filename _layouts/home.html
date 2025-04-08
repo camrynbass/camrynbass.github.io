@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ site.title }}</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="{{ '/assets/css/jekyll-theme-chirpy.css' | relative_url }}">
   </head>
   <body>
     <header>
@@ -13,7 +13,6 @@
     </header>
     <main>
       {{ content }}
-      <!-- This includes the content from index.html -->
     </main>
     <footer>
       <p>© {{ site.name }}</p>
