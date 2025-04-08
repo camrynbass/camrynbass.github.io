@@ -14,9 +14,8 @@ timezone:
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Cam Bass, B.Sc Biology # the main title
-
-tagline: Biologist and Computational Geneticist # it will display as the subtitle
+title: Cam Bass, B.Sc Biology
+tagline: Biologist and Computational Geneticist
 
 description: >- # used by seo meta and the atom feed
 
