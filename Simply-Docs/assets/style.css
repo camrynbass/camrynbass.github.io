@@ -8,16 +8,23 @@ body {
 }
 
 header {
+  display: flex;
   background-color: #2e7d32;
   color: white;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
-  text-spacing-trim: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header img {
+  height: 50px;
 }
 
 header h1 {
-  margin: 0;
-  font-size: 2.5em;
+  margin-left: 10px;
+  text-align: left;
+  flex-grow: 1;
 }
 
 header p {
@@ -61,4 +68,23 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  width: 100%;
+  max-width: 400px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  margin: 0 10px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: inherit;
 }
