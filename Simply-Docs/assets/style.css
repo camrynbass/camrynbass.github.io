@@ -62,7 +62,10 @@ a:hover {
   text-shadow: 3px 3px 1px rgba(15, 105, 30, 0.526);
 }
 
-p {
-  text-align: 10px;
-}
+nav{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin: 10px;
+  }
 
