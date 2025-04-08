@@ -7,6 +7,12 @@ body {
   color: #333;
 }
 
+title {
+  background-color: #2e7d32;
+  color: white;
+  padding: 20px;
+  align-items: left;
+}
 header {
   background-color: #2e7d32;
   color: white;
@@ -64,11 +70,12 @@ a:hover {
 
 .nav {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   list-style: none;
   width: 100%;
-  padding: 0;
-  margin: 0;
+  padding: 10px;
+  margin: 10px;
 }
 
 .nav li {
