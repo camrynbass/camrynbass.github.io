@@ -10,7 +10,7 @@ body {
 title {
   background-color: #2e7d32;
   color: white;
-  padding: 20px;
+  padding-left: 20px;
   align-items: left;
 }
 header {
@@ -38,7 +38,7 @@ h2 {
   border-bottom: 2px solid #2e7d32;
   padding-bottom: 5px;
   font-size: 1.5em;
-  text-align: center;
+  text-align: left;
 }
 
 h3 {
@@ -68,7 +68,7 @@ a:hover {
   text-decoration: underline;
 }
 
-.nav {
+nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -76,13 +76,4 @@ a:hover {
   width: 100%;
   padding: 10px;
   margin: 10px;
-}
-
-.nav li {
-  margin: 10px;
-}
-
-.nav a {
-  text-decoration: none;
-  color: inherit;
 }
