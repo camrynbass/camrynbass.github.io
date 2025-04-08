@@ -1,14 +1,3 @@
-layout: page
-title: "PAGE-TITLE"
-permalink: /URL-PATH
-description: "PAGE-DESCRIPTION"
-# ---
-# > Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
-
----
-layout: 
-title: Cam Bass - Computational Genetic Biologist
----
 
 <style>
     :root {
