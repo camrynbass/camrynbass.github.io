@@ -66,6 +66,8 @@ nav{
   display: flex;
   justify-content: space-between;
   text-align: center;
-  margin: 10px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 0px;
   }
 
