@@ -20,15 +20,6 @@ body {
     background-position: center; /* centers the visible part */
     background-repeat: no-repeat;
 }
-/* Header image container – not sticky by default */
-/*.sticky-header-image {*/
-/*    width: fit-content;*/
-/*    height: 200px;          /* fixed height */
-/*    object-fit: cover;      /* crops to fill, no distortion */
-/*    background-color: #9CAF88;  /* optional, matches your sage theme */
-/*    text-align: center;*/
-/*    z-index: 1001;              /* stays above nav when sticky */
-/*}*/
 
 .sticky-header-image img {
     max-width: 100%;
@@ -68,8 +59,8 @@ body {
 .main-nav a {
     display: block;             /* Makes the entire area clickable */
     padding: 1rem 0;            /* Vertical padding, horizontal 0 */
-    background-color: #8FA07C;  /* Slightly darker sage for button contrast */
-    color: white;
+    background-color: #ccdeb8;  /* Slightly darker sage for button contrast */
+    color: black;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2rem;
@@ -86,8 +77,8 @@ body {
 
 /* Footer */
 .site-footer {
-    background-color: #9CAF88;  /* Same sage green */
-    color: white;
+    background-color: #ccdeb8;  /* Same sage green */
+    color: black;
     text-align: center;
     padding: 1rem;
     margin-top: auto;            /* Pushes footer to bottom */
