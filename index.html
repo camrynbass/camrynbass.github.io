@@ -6,7 +6,10 @@
     <link rel="stylesheet" href="source/display_settings.css">
 </head>
 <body>
-
+    <div class="sticky-header-image" id="headerImageContainer" style="background-image: url('images/green_header.htm');"></div>
+    <!-- <div class="sticky-header-image" id="headerImageContainer">
+        <img src="images/green_header.htm" alt="Header Image" id="headerImage">
+    </div> -->
     <header class="site-header">
         <nav class="main-nav">
             <ul>
@@ -24,9 +27,43 @@
     </main>
 
     <footer class="site-footer">
-        <img class="responsive-img" src="images/criucpq-logo.png" alt="CRIUCPQ logo">
+        <div class="image-text-row">
+            <img src="images/criucpq-ulaval-logo.png" alt="CRIUCPQ logo" class="side-image">
+            <div class="side-text">
+                <h3>Gagné Lab - CRIUCPQ</h3>
+                <p>The Gagné lab is located at the CRIUCPQ - a Université Laval research center.</p>
+
+            </div>
+        </div>
         <p>&copy; 2026 Camryn Bass. All rights reserved.</p>
 
     </footer>
+    <script>
+        function updateStickyHeader() {
+            const imageContainer = document.getElementById('headerImageContainer');
+            const headerImage = document.getElementById('headerImage');
+            const siteHeader = document.querySelector('.site-header');
+            
+            if (!imageContainer || !headerImage || !siteHeader) return;
+
+            // Get rendered image height and window height
+            const imageHeight = headerImage.clientHeight;
+            const windowHeight = window.innerHeight;
+
+            // Condition: window height > 5 × image height
+            if (windowHeight > 5 * imageHeight) {
+                imageContainer.classList.add('sticky');
+                // Set nav top to image height so it sits below the sticky image
+                siteHeader.style.setProperty('top', imageHeight + 'px');
+            } else {
+                imageContainer.classList.remove('sticky');
+                siteHeader.style.setProperty('top', '0px');
+            }
+        }
+
+        // Run on page load and whenever the window is resized
+        window.addEventListener('load', updateStickyHeader);
+        window.addEventListener('resize', updateStickyHeader);
+    </script>
 </body>
 </html>

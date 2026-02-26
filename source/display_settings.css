@@ -13,8 +13,37 @@ body {
     display: flex;
     flex-direction: column;
 }
+.sticky-header-image {
+    width: 100%;
+    height: 200px;
+    background-size: cover;     /* covers the area, may crop */
+    background-position: center; /* centers the visible part */
+    background-repeat: no-repeat;
+}
+/* Header image container – not sticky by default */
+/*.sticky-header-image {*/
+/*    width: fit-content;*/
+/*    height: 200px;          /* fixed height */
+/*    object-fit: cover;      /* crops to fill, no distortion */
+/*    background-color: #9CAF88;  /* optional, matches your sage theme */
+/*    text-align: center;*/
+/*    z-index: 1001;              /* stays above nav when sticky */
+/*}*/
 
-/* Header */
+.sticky-header-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* When the image is sticky */
+.sticky-header-image.sticky {
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
 .site-header {
     background-color: #9CAF88;  /* Sage green */
     position: sticky;
@@ -45,7 +74,7 @@ body {
     font-weight: bold;
     font-size: 1.2rem;
     border: 2px solid #6b7c5a;  /* Subtle border */
-    border-radius: 8px;         /* Rounded corners */
+    border-radius: 0px;         /* 8 for rounded corners */
     margin: 4px;                /* Small gap between buttons */
     transition: all 0.3s ease;
 }
@@ -75,11 +104,37 @@ main {
     width: 100%;
 }
 
-/* Responsive image (optional) */
-.responsive-img {
-    width: 50%;
-    height: auto;
-    max-width: 50%;
-    display: block;
-    margin: 2rem auto;
+/* Container for image + text */
+.image-text-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;      /* vertically center image and text */
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+/* Image styling */
+.side-image {
+    width: 50vw;              /* 40% of the viewport width */
+    max-width: 100%;          /* Prevents overflow on small screens */
+    height: auto;             /* Maintain aspect ratio */
+    display: block;           /* Removes extra space below image */
+}
+
+/* Text container */
+.side-text {
+    flex: 1;                  /* Takes remaining width */
+    min-width: 250px;         /* Prevents text from becoming too narrow */
+    text-align: left;         /* Left-justified text */
+}
+
+/* Stack on screens smaller than 300px */
+@media (max-width: 300px) {
+    .image-text-row {
+        flex-direction: column;  /* Stack vertically */
+        gap: 1rem;               /* Reduce gap for small screens */
+    }
+    .side-image {
+        width: 100%;             /* Image takes full width of container */
+    }
 }
