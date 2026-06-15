@@ -2,20 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello!</title>
-    <base href="https://camrynbass.github.io">
-    <link rel="stylesheet" href="source/display_settings.css">
-    <meta name="keywords" content="Cam Bass, Camryn Bass">
-    <meta name="description" content="Learn about me, my work, and my interests.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Camryn Bass | Personal Portfolio</title>
+    <meta name="description" content="Learn about Camryn Bass: professional background, research interests, and work with the Gagné Lab at CRIUCPQ.">
+    <meta name="keywords" content="Camryn Bass, Cam Bass, Gagné Lab, CRIUCPQ, researcher, portfolio">
     <meta name="author" content="Camryn Bass">
+    <link rel="stylesheet" href="source/display_settings.css">
 </head>
 <body>
-    <div class="sticky-header-image" id="headerImageContainer" style="background-image: url('images/green_header.htm');"></div>
 
-    <header class="site-header">
-        <nav class="main-nav">
+    <!-- Decorative hero / header image that becomes sticky under specific viewport conditions -->
+    <div class="sticky-header-wrapper" id="headerImageContainer">
+    <div class="header-left" style="background-image: url('images/CamBass_headshot_whitebg.JPG');"></div>
+    <div class="header-right" style="background-image: url('images/green_header.htm');">
+        <div class="hero-overlay">
+            <h1>Camryn Bass</h1>
+            <h2>B.Sc., Master's student</h2>
+            <hr />
+            <p>Computational Biologist | Cancer Researcher | Gagné Lab, CRIUCPQ</p>
+        </div>
+    </div>
+</div>
+
+    <!-- Primary navigation header (sticky, dynamically offset by JS if needed) -->
+    <header class="site-header" id="siteHeader">
+        <nav class="main-nav" aria-label="Main navigation">
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" aria-current="page">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
                 <li><a href="resume.html">Resumé</a></li>
             </ul>
@@ -24,48 +37,92 @@
 
     <main>
         <h1>Camryn Bass</h1>
-        <p>This is a test paragraph.</p>
-
+        <p>Welcome to my website. I'm a master's student dedicated to advancing lung cancer computational biology research at the Gagné Lab, CRIUCPQ.</p>
+        <p>Explore my work, academic journey, and current projects. This website serves as a window into my professional path and scientific interests.</p>
     </main>
 
     <footer class="site-footer">
         <div class="image-text-row">
-            <img src="images/criucpq-ulaval-logo.png" alt="CRIUCPQ logo" class="side-image">
+            <img src="images/criucpq-ulaval-logo.png" alt="CRIUCPQ research centre official logo" class="side-image" loading="lazy">
             <div class="side-text">
-                <h3>Gagné Lab - CRIUCPQ</h3>
-                <p>The Gagné lab is located at the CRIUCPQ - a Université Laval research center.</p>
-
+                <h3>Gagné Lab — CRIUCPQ</h3>
+                <p>The Gagné lab is located at the CRIUCPQ - a Université Laval research center. Our team focuses on innovative translational research in cardiopulmonary sciences and molecular mechanisms.</p>
             </div>
         </div>
         <p>&copy; 2026 Camryn Bass. All rights reserved.</p>
-
     </footer>
+
     <script>
-        function updateStickyHeader() {
-            const imageContainer = document.getElementById('headerImageContainer');
-            const headerImage = document.getElementById('headerImage');
-            const siteHeader = document.querySelector('.site-header');
+        (function() {
+            "use strict";
             
-            if (!imageContainer || !headerImage || !siteHeader) return;
+            // DOM elements
+            const headerImageContainer = document.getElementById('headerImageContainer');
+            const siteHeader = document.querySelector('.site-header');
 
-            // Get rendered image height and window height
-            const imageHeight = headerImage.clientHeight;
-            const windowHeight = window.innerHeight;
-
-            // Condition: window height > 5 × image height
-            if (windowHeight > 5 * imageHeight) {
-                imageContainer.classList.add('sticky');
-                // Set nav top to image height so it sits below the sticky image
-                siteHeader.style.setProperty('top', imageHeight + 'px');
-            } else {
-                imageContainer.classList.remove('sticky');
-                siteHeader.style.setProperty('top', '0px');
+            // Guard clause — if elements are missing, do nothing gracefully
+            if (!headerImageContainer || !siteHeader) {
+                console.warn('Required elements missing for sticky header logic');
+                return;
             }
-        }
 
-        // Run on page load and whenever the window is resized
-        window.addEventListener('load', updateStickyHeader);
-        window.addEventListener('resize', updateStickyHeader);
+            /**
+             * Updates sticky behavior based on viewport height vs header image height.
+             * Condition: if window height > 5 × container height -> make image sticky
+             * and offset the navigation bar just below it.
+             * Otherwise remove sticky behavior and reset nav to top:0.
+             */
+            function updateStickyHeader() {
+                // get current rendered height of the decorative image container
+                const containerHeight = headerImageContainer.clientHeight;
+                const windowHeight = window.innerHeight;
+                
+                // condition: window height greater than 5 times image container height
+                const shouldSticky = windowHeight > 5 * containerHeight;
+
+                if (shouldSticky) {
+                    // Make the header image sticky
+                    headerImageContainer.classList.add('sticky');
+                    // Adjust the navigation bar's sticky top offset so it sits right below the fixed image
+                    siteHeader.style.setProperty('top', containerHeight + 'px', 'important');
+                } else {
+                    // Remove sticky class and reset nav bar to default sticky top (0)
+                    headerImageContainer.classList.remove('sticky');
+                    siteHeader.style.setProperty('top', '0px', 'important');
+                }
+            }
+
+            // Ensure we also run after any images/fonts potentially affect layout
+            // Use requestAnimationFrame to prevent layout thrashing and guarantee smooth updates.
+            let resizeTimer;
+            function handleResize() {
+                // Debounce resize events for performance
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    updateStickyHeader();
+                }, 100);
+            }
+
+            // Initial update after DOM is fully ready (styles and layout are computed)
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', () => {
+                    updateStickyHeader();
+                });
+            } else {
+                updateStickyHeader();
+            }
+
+            // Listen for resize events with passive flag for better scroll performance
+            window.addEventListener('resize', handleResize, { passive: true });
+            
+            // Optional: when images inside the container (if any) load, the container height could change,
+            // but we rely on container height only. However if background image loads and changes aspect ratio?
+            // Container uses fixed CSS height (200px) so height remains constant, but we also account 
+            // for any potential override due to dynamic content.  Good practice: re-run on window load.
+            window.addEventListener('load', () => {
+                updateStickyHeader();
+            });
+        })();
     </script>
 </body>
 </html>

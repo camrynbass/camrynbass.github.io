@@ -1,4 +1,4 @@
-/* Global reset & font */
+/* ---------- GLOBAL RESET & DESIGN TOKENS ---------- */
 * {
     margin: 0;
     padding: 0;
@@ -6,126 +6,309 @@
 }
 
 body {
-    font-family: 'Calibri', 'Arial', sans-serif; /* Calibri first, fallback */
+    font-family: 'Calibri', 'Segoe UI', 'Arial', sans-serif;
     line-height: 1.6;
     background-color: #f9f9f9;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    color: #1e2a1c;
 }
-.sticky-header-image {
+
+/* ---------- SPLIT HEADER (LEFT + RIGHT IMAGES) ---------- */
+.sticky-header-wrapper {
     width: 100%;
-    height: 200px;
-    background-size: cover;     /* covers the area, may crop */
-    background-position: center; /* centers the visible part */
+    height: 200px;                /* Same fixed height as before */
+    display: flex;
+    flex-direction: row;
+    transition: box-shadow 0.2s ease;
+}
+
+/* Left image container - 35% width */
+.header-left {
+    width: 25%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
+    background-color: #ccdeb8;   /* fallback */
 }
 
-.sticky-header-image img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+/* Right image container - 65% width, relative for overlay positioning */
+.header-right {
+    width: 75%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #ccdeb8;
+    position: relative;          /* Needed for absolute overlay inside */
 }
 
-/* When the image is sticky */
-.sticky-header-image.sticky {
+/* Sticky state applied by JS on the wrapper */
+.sticky-header-wrapper.sticky {
     position: sticky;
     top: 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 998;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
+/* Hero overlay - only on the right side, same as before */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;                     /* Changed from 27.5% because now it's relative to the right container (which is 65% of total) */
+    width: 100%;                 /* Full width of the right container */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: brightness(0.85);
+    color: white;
+    text-align: left;
+    padding: 1rem;
+}
+
+/* Keep the overlay text styling exactly as before */
+.hero-overlay h1 {
+    font-size: 3rem;
+    margin: 0;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    border-left: none;
+    padding-left: 0;
+}
+
+.hero-overlay h2 {
+    font-size: 2rem;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    border-left: none;
+    padding-left: 0;
+    margin-top: -1.25rem;
+}
+
+.hero-overlay p {
+    font-size: 1.3rem;
+    margin-top: 0;
+    color: rgba(255,255,255,0.95);
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 680px) {
+    .sticky-header-wrapper {
+        flex-direction: column;  /* Stack vertically on narrow screens */
+        height: auto;            /* Allow height to adjust */
+    }
+    .header-left, .header-right {
+        width: 100%;
+        height: 150px;          /* Each gets a reasonable height */
+    }
+    .hero-overlay h1 { font-size: 2rem; }
+    .hero-overlay h2 { font-size: 1.5rem; margin-top: -0.5rem; }
+    .hero-overlay p { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+    .header-left, .header-right {
+        height: 120px;
+    }
+}
+
+
+
+/* Keep the sticky behavior intact */
+.sticky-header-image.sticky .hero-overlay {
+    position: absolute;
+    /* remains over the sticky image */
+}
+
+/* ---------- MAIN NAVIGATION BAR ---------- */
 .site-header {
-    background-color: #9CAF88;  /* Sage green */
+    background-color: #9CAF88;
+    /* sage green base */
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: top 0.2s ease-out;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Navigation */
 .main-nav ul {
     list-style: none;
-    display: flex;              /* Places items in a row */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     padding: 0;
     margin: 0;
 }
 
 .main-nav li {
-    flex: 1;                    /* Each li takes equal width */
-    text-align: center;         /* Center the text inside the button */
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
 }
 
 .main-nav a {
-    display: block;             /* Makes the entire area clickable */
-    padding: 1rem 0;            /* Vertical padding, horizontal 0 */
-    background-color: #ccdeb8;  /* Slightly darker sage for button contrast */
-    color: black;
+    display: block;
+    padding: 1rem 0.5rem;
+    background-color: #ccdeb8;
+    color: #1e2f1a;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2rem;
-    border: 2px solid #6b7c5a;  /* Subtle border */
-    border-radius: 0px;         /* 8 for rounded corners */
-    margin: 4px;                /* Small gap between buttons */
-    transition: all 0.3s ease;
+    border: 2px solid #6b7c5a;
+    border-radius: 0;
+    margin: 6px 5px;
+    transition: all 0.25s ease;
+    letter-spacing: 0.3px;
 }
 
 .main-nav a:hover {
-    background-color: #7f8c6b;  /* Even darker on hover */
+    background-color: #7f8c6b;
     border-color: #5a6849;
+    color: white;
+    transform: translateY(-2px);
 }
 
-/* Footer */
-.site-footer {
-    background-color: #ccdeb8;  /* Same sage green */
-    color: black;
-    text-align: center;
-    padding: 1rem;
-    margin-top: auto;            /* Pushes footer to bottom */
-    font-size: 1rem;
-    border-top: 2px solid #6b7c5a;
+.main-nav a:active {
+    transform: translateY(1px);
 }
 
-/* Main content */
+/* ---------- MAIN CONTENT AREA ---------- */
 main {
     flex: 1;
-    padding: 2rem;
-    max-width: 1200px;
+    padding: 2rem 1.5rem;
+    max-width: 1280px;
     margin: 0 auto;
     width: 100%;
 }
 
-/* Container for image + text */
+main h1 {
+    font-size: 2.6rem;
+    margin-bottom: 0.75rem;
+    color: #2c4b2c;
+    font-weight: 600;
+}
+
+main p {
+    font-size: 1.2rem;
+    color: #2d3e2a;
+    margin: 1rem 0;
+}
+
+/* ---------- FOOTER (with logo and lab info) ---------- */
+.site-footer {
+    background-color: #ccdeb8;
+    color: #1e2a1a;
+    text-align: center;
+    padding: 1.8rem 1rem 1.5rem;
+    margin-top: auto;
+    border-top: 3px solid #6b7c5a;
+    font-size: 0.95rem;
+}
+
 .image-text-row {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;      /* vertically center image and text */
+    align-items: center;
+    justify-content: center;
     gap: 2rem;
-    margin: 2rem 0;
+    margin: 0 auto 1.8rem;
+    max-width: 1000px;
+    padding: 0 1rem;
 }
 
-/* Image styling */
 .side-image {
-    width: 50vw;              /* 40% of the viewport width */
-    max-width: 100%;          /* Prevents overflow on small screens */
-    height: auto;             /* Maintain aspect ratio */
-    display: block;           /* Removes extra space below image */
+    width: 1200px;
+    max-width: 40vw;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0);
+    padding: 6px;
+    transition: transform 0.2s;
 }
 
-/* Text container */
+.side-image:hover {
+    transform: scale(1.02);
+}
+
 .side-text {
-    flex: 1;                  /* Takes remaining width */
-    min-width: 250px;         /* Prevents text from becoming too narrow */
-    text-align: left;         /* Left-justified text */
+    flex: 2;
+    min-width: 220px;
+    text-align: left;
 }
 
-/* Stack on screens smaller than 300px */
-@media (max-width: 300px) {
+.side-text h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem;
+    color: #2a4727;
+    font-weight: 600;
+}
+
+.side-text p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #2c3a24;
+}
+
+/* ---------- RESPONSIVE BEHAVIOR ---------- */
+@media (max-width: 680px) {
+    .main-nav ul {
+        flex-direction: column;
+    }
+    
+    .main-nav li {
+        margin: 2px 0;
+    }
+    
+    .main-nav a {
+        margin: 2px 10px;
+        border-radius: 30px;
+    }
+    
+    main h1 {
+        font-size: 2rem;
+        padding-left: 1rem;
+    }
+    
     .image-text-row {
-        flex-direction: column;  /* Stack vertically */
-        gap: 1rem;               /* Reduce gap for small screens */
+        flex-direction: column;
+        text-align: center;
+        gap: 1.2rem;
     }
+    
+    .side-text {
+        text-align: center;
+    }
+    
     .side-image {
-        width: 100%;             /* Image takes full width of container */
+        max-width: 180px;
+        width: 60%;
     }
+}
+
+@media (max-width: 480px) {
+    .sticky-header-image {
+        height: 150px;
+    }
+    
+    main {
+        padding: 1.5rem;
+    }
+    
+    .side-text h3 {
+        font-size: 1.25rem;
+    }
+}
+
+/* maintain smooth footer spacing */
+.site-footer p:last-child {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    opacity: 0.8;
 }

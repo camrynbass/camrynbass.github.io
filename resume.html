@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello!</title>
+    <base href="https://camrynbass.github.io">
+    <link rel="stylesheet" href="source/display_settings.css">
+    <meta name="keywords" content="Cam Bass, Camryn Bass">
+    <meta name="description" content="Learn about me, my work, and my interests.">
+    <meta name="author" content="Camryn Bass">
+</head>
+<body>
+    <div class="sticky-header-image" id="headerImageContainer" style="background-image: url('images/green_header.htm');"></div>
+
+    <header class="site-header">
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="source/about.html">About Me</a></li>
+                <li><a href="source/resume.html">Resumé</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Camryn Bass</h1>
+        <p>All about me...</p>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="image-text-row">
+            <img src="images/criucpq-ulaval-logo.png" alt="CRIUCPQ logo" class="side-image">
+            <div class="side-text">
+                <h3>Gagné Lab - CRIUCPQ</h3>
+                <p>The Gagné lab is located at the CRIUCPQ - a Université Laval research center.</p>
+
+            </div>
+        </div>
+        <p>&copy; 2026 Camryn Bass. All rights reserved.</p>
+
+    </footer>
+    <script>
+        function updateStickyHeader() {
+            const imageContainer = document.getElementById('headerImageContainer');
+            const headerImage = document.getElementById('headerImage');
+            const siteHeader = document.querySelector('.site-header');
+            
+            if (!imageContainer || !headerImage || !siteHeader) return;
+
+            // Get rendered image height and window height
+            const imageHeight = headerImage.clientHeight;
+            const windowHeight = window.innerHeight;
+
+            // Condition: window height > 5 × image height
+            if (windowHeight > 5 * imageHeight) {
+                imageContainer.classList.add('sticky');
+                // Set nav top to image height so it sits below the sticky image
+                siteHeader.style.setProperty('top', imageHeight + 'px');
+            } else {
+                imageContainer.classList.remove('sticky');
+                siteHeader.style.setProperty('top', '0px');
+            }
+        }
+
+        // Run on page load and whenever the window is resized
+        window.addEventListener('load', updateStickyHeader);
+        window.addEventListener('resize', updateStickyHeader);
+    </script>
+</body>
+</html>
