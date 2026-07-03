@@ -13,6 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     color: #1e2a1c;
+    cursor: url("images/leaf_cursor.cur"), auto;
 }
 
 /* ----- Colour palette ----- */
@@ -272,11 +273,12 @@ main p {
     margin: 0.5em;
     margin-bottom: 0.5em;
     color: #2a4727;
+    border-color: #98ac94;
+    border-width: 1px;
+    font-variant: small-caps;
     font-weight: bold;
     font-size: 24px;
     background-color: white;
-    box-shadow: 3px 3px 2px grey;
-    border-radius: 6px;
     border-style: solid;
 }
 
@@ -285,18 +287,28 @@ main p {
     font-style: italic;
     font-weight: normal;
     padding: 0.25em 1em;
+    font-size: 18px;
 }
 
 .card h4 {
-    line-height: 1.1em;
     font-weight: bold;
-    font-size: 24px;
-    margin-left: 0.5em;
+    font-size: 18px;
+    margin-left: 1em;
+    margin-bottom: -10px;
+    font-style: oblique;
 }
 
 .card img {
-    padding: 0.5em 1em;
-    width: fit-content;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-left:4%;
+    margin-right:4%;
+    width:90%;
+    align-self: center;
+    border-width: 4px;
+    background-color: #263421;
 }
 
 .card p {
