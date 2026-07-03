@@ -353,7 +353,9 @@ main p {
         margin-top: -10px;
     }
     .hero-overlay p {
-        font-size: 20px;
+        font-size: 18px;
+        margin-top: 5px;
+        line-height: 1.25rem;
     }
 
     /* Navigation responsive */
@@ -399,6 +401,20 @@ main p {
         background-position: center;
     }
 
+    /* Adjust overlay text sizes */
+    .hero-overlay h1 {
+        font-size: 32px;
+    }
+    .hero-overlay h2 {
+        font-size: 22px;
+        margin-top: -10px;
+    }
+    .hero-overlay p {
+        font-size: 16px;
+        margin-top: 5px;
+        line-height: 1.25rem;
+    }
+
     .main-nav ul {
         flex-direction: column;
     }
@@ -413,6 +429,8 @@ main p {
     .side-text h3 {
         font-size: 1.25rem;
     }
+
+
 }
 
 .site-footer p:last-child {
