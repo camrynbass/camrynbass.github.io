@@ -2,70 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello!</title>
-    <base href="https://camrynbass.github.io">
-    <link rel="stylesheet" href="source/display_settings.css">
-    <meta name="keywords" content="Cam Bass, Camryn Bass">
-    <meta name="description" content="Learn about me, my work, and my interests.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Camryn Bass | Personal Portfolio</title>
+    <meta name="description" content="Learn about Camryn Bass: professional background, research interests, and work with the Gagné Lab at CRIUCPQ.">
+    <meta name="keywords" content="Camryn Bass, Cam Bass, Gagné Lab, CRIUCPQ, researcher, portfolio">
     <meta name="author" content="Camryn Bass">
+    <link rel="stylesheet" href="source/display_settings.css">
 </head>
+
 <body>
-    <div class="sticky-header-image" id="headerImageContainer" style="background-image: url('images/green_header.htm');"></div>
-
-    <header class="site-header">
-        <nav class="main-nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="source/about.html">About Me</a></li>
-                <li><a href="source/resume.html">Resumé</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <h1>Camryn Bass</h1>
-        <p>All about me...</p>
-
-    </main>
-
-    <footer class="site-footer">
-        <div class="image-text-row">
-            <img src="images/logos/criucpq-ulaval-logo.png" alt="CRIUCPQ logo" class="side-image">
-            <div class="side-text">
-                <h3>Gagné Lab - CRIUCPQ</h3>
-                <p>The Gagné lab is located at the CRIUCPQ - a Université Laval research center.</p>
-
+    <!-- Header with headshot and background gif (non-sticky) -->
+    <div class="header-wrapper" id="headerImageContainer">
+        <!-- Headshot on the left side if screens are wide enough -->
+        <div class="header-left" style="background-image: url('images/CamBass_headshot_whitebg.JPG');"></div>
+        <!-- animated header background -->
+        <div class="header-right" style="background-image: url('images/green_header.htm');">
+            <div class="header-overlay">
+                <h1>Camryn Bass</h1>
+                <h2>B.Sc., Master's student</h2>
+                <hr />
+                <p>Computational Biologist | Cancer Researcher | Gagné Lab </p>
+                <!-- Disclaimer about how incomplete this is. 
+                I hope nobody sees this site until it's ready...-->
+                <p style="font-size: 16px;">* This website is under construction!
             </div>
         </div>
-        <p>&copy; 2026 Camryn Bass. All rights reserved.</p>
-
-    </footer>
-    <script>
-        function updateStickyHeader() {
-            const imageContainer = document.getElementById('headerImageContainer');
-            const headerImage = document.getElementById('headerImage');
-            const siteHeader = document.querySelector('.site-header');
+    </div>
+        
+    <!-- Primary navigation header (sticky) -->
+    <header class="sticky-nav-header" id="siteHeader">
+        <nav class="main-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="resume.html">Resumé</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+           </ul>
+        </nav>
+    </header>
+        
+    <!-- Home page -->
+    <main>
+        <img src="CV_CamBass_June2026.htm">
+                
+    </main>
             
-            if (!imageContainer || !headerImage || !siteHeader) return;
-
-            // Get rendered image height and window height
-            const imageHeight = headerImage.clientHeight;
-            const windowHeight = window.innerHeight;
-
-            // Condition: window height > 5 × image height
-            if (windowHeight > 5 * imageHeight) {
-                imageContainer.classList.add('sticky');
-                // Set nav top to image height so it sits below the sticky image
-                siteHeader.style.setProperty('top', imageHeight + 'px');
-            } else {
-                imageContainer.classList.remove('sticky');
-                siteHeader.style.setProperty('top', '0px');
-            }
-        }
-
-        // Run on page load and whenever the window is resized
-        window.addEventListener('load', updateStickyHeader);
-        window.addEventListener('resize', updateStickyHeader);
-    </script>
+    <footer class="site-footer">
+        <div class="footer-row">
+            <img src="images/logos/criucpq-ulaval-logo.png" alt="CRIUCPQ research centre official logo" class="footer-image" loading="lazy">
+            <div class="footer-text">
+                <h3>Gagné Lab — CRIUCPQ</h3>
+                <p>The Gagné lab is located at the CRIUCPQ - a Université Laval research center. Our team focuses on innovative translational research in cardiopulmonary sciences and molecular mechanisms.</p>
+            </div>
+        </div>
+        <p>I coded this website myself with HTML, CSS, and Javascript in VScode using github pages. Check out the source code on my <a href="http://www.github.com/camrynbass">Github <img width=12px src="images/logos/github_logo.png" alt="Github logo" /></a> page</p>
+        <p>&copy; 2026 Camryn Bass. All rights reserved.</p>
+    </footer>
+                
 </body>
 </html>

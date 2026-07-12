@@ -1,121 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-        <title>Camryn Bass | Personal Portfolio</title>
-        <meta name="description" content="Learn about Camryn Bass: professional background, research interests, and work with the Gagné Lab at CRIUCPQ.">
-        <meta name="keywords" content="Camryn Bass, Cam Bass, Gagné Lab, CRIUCPQ, researcher, portfolio">
-        <meta name="author" content="Camryn Bass">
-        <link rel="stylesheet" href="source/display_settings.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Camryn Bass | Personal Portfolio</title>
+    <meta name="description" content="Learn about Camryn Bass: professional background, research interests, and work with the Gagné Lab at CRIUCPQ.">
+    <meta name="keywords" content="Camryn Bass, Cam Bass, Gagné Lab, CRIUCPQ, researcher, portfolio">
+    <meta name="author" content="Camryn Bass">
+    <link rel="stylesheet" href="source/display_settings.css">
+</head>
 
-    <body>
-        <!-- Header with headshot and background gif (non-sticky) -->
-        <div class="sticky-header-wrapper" id="headerImageContainer">
-            <div class="header-left" style="background-image: url('images/CamBass_headshot_whitebg.JPG');"></div>
-            <div class="header-right" style="background-image: url('images/green_header.htm');">
-                <div class="hero-overlay">
-                    <h1>Camryn Bass</h1>
-                    <h2>B.Sc., Master's student</h2>
-                    <hr />
-                    <p>Computational Biologist | Cancer Researcher | Gagné Lab </p>
-                    <!-- Disclaimer about how incomplete this is. 
-                        I hope nobody sees this site until it's ready...-->
-                    <p style="font-size: 16px;">* This website is under construction!
-                </div>
+<body>
+    <!-- Header with headshot and background gif (non-sticky) -->
+    <div class="header-wrapper" id="headerImageContainer">
+        <!-- Headshot on the left side if screens are wide enough -->
+        <div class="header-left" style="background-image: url('images/CamBass_headshot_whitebg.JPG');"></div>
+        <!-- animated header background -->
+        <div class="header-right" style="background-image: url('images/green_header.htm');">
+            <div class="header-overlay">
+                <h1>Camryn Bass</h1>
+                <h2>B.Sc., Master's student</h2>
+                <hr />
+                <p>Computational Biologist | Cancer Researcher | Gagné Lab </p>
+                <!-- Disclaimer about how incomplete this is. 
+                I hope nobody sees this site until it's ready...-->
+                <p style="font-size: 16px;">* This website is under construction!
             </div>
         </div>
-
-        <!-- Primary navigation header (sticky) -->
-        <header class="site-header" id="siteHeader">
-            <nav class="main-nav" aria-label="Main navigation">
-                <ul>
-                    <li><a href="index.html" aria-current="page">Home</a></li>
-                    <li><a href="about.html">About Me</a></li>
-                    <li><a href="resume.html">Resumé</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <!-- Home page -->
-        <main>
-            <h1 style="text-align: center;">Home</h1>
-            <p>Welcome to my website. I'm a master's student dedicated to advancing lung cancer computational biology research at the Gagné Lab, CRIUCPQ.</p>
-            <p>Explore my work, academic journey, and current projects. This website serves as a window into my professional path and scientific interests.</p>        
-            <p style="height:20px"></p>
-            
-            <!-- Blog header -->
-            <div class="blog-header">
-                <h2><img style="float: inline-start;width:42px;height:42px;align-content:center;margin-right:-21px;" src="images/icons/notepad.png" alt="green notepad"/> 
-                    Recent Posts
-                </h2>
-            </div>
-
-            <!-- Container for both columns of blog -->
-            <div class="row"> 
-
-                <!-- Posts that appear on the left side -->
-                <div class="leftcolumn">
-
-                    <div class="card">
-                        <h2>May 27th, 2026</h2>
-                        <h1>I have been selected to present my small cell lung carcinoma research at the World Conference for Lung Cancer (WCLC) 2026 in Seoul!</h1>
-                        <img src="images/posts/WCLC_announcement.png" style="    background-color: #263421;">
-                        <h3>Upcoming poster presentation and abstract publication in the Journal of Thoracic Oncology (JTO)</h3>
-                        <p class="post">I am happy to announce that my abstract has been accepted by the International Association for the Study of Lung Cancer (IASLC) for a poster presentation at the World Conference for Lung Cancer (WCLC) 2026 in Seoul, Republic of Korea. I will present my research on small cell lung carcinoma (SCLC) on the morning of September 15th, 2026.</p>
-                        <p style="margin-bottom: -12px;"><strong>Abstract Title:</strong></p>
-                        <p style="font-size: 20px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Survival-informed transcriptomic classification of resected SCLC with improved prognostic and TME discrimination
-                        <p><strong>Session:</strong> P3.13 - Small Cell Lung Cancer and Neuroendocrine Tumors</p>
-                        <p style="margin-top: -12px;"><strong>Date & Time:</strong> Tuesday Sep 15, 2026 9:30 AM - 11:00 AM</p>
-                        <p>If you are a fellow WCLC 2026 attendee, please feel free to reach out and connect with me over email or via my LinkedIn page. I will be attending the welcome reception and the IASLC celebration night.</p>
-                        <p>I look forward to attending my first major international conference and learning about the newest global developments in pulmonary oncology research. I hope to meet many presenters and attendees, and I am excited to share my work with the world!</p>
-                    </div>
-
-                    <div class="card">
-                        <h2>May 26, 2026</h2>
-                        <h1>Oral Presentation: Retraite scientifique en oncologie 2026, Manoir du Lac-Delage, Québec, QC. May 26, 2026</h1>
-                        <p>Some text..</p>
-                    </div>
-
-                </div>
-
-                <!-- Posts that appear on the right side -->
-                <div class="rightcolumn">
-                    <div class="card">
-                        <h2>December, 2026</h2>
-                        <h1>What is small cell lung carcinoma?</h1>
-                        <div class="row">
-                            <div class="imgcolumn" style="rotate: -45deg;"><img src="images/icons/dna.png"></div>
-                            <div class="imgcolumn"><img src="images/icons/lungs.png"></div>
-                            <div class="imgcolumn"><img src="images/icons/cig.png"></div>
-                        </div>
-                        <p>Some text..</p>
-                    </div>
-                </div>
-
-            </div>
-            <!-- Blog footer -->
-            <div class="card-footer">
-                <h2>End of post history...</h2>
-            </div>
+    </div>
         
-        </main>
+    <!-- Primary navigation header (sticky) -->
+    <header class="sticky-nav-header" id="siteHeader">
+        <nav class="main-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="resume.html">Resumé</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+           </ul>
+        </nav>
+    </header>
+        
+    <!-- Home page -->
+    <main>
+        <h1 style="text-align: center;">Home</h1>
+        <p>Welcome to my website. I'm a master's student dedicated to advancing lung cancer computational biology research at the Gagné Lab, CRIUCPQ.</p>
+        <p>Explore my work, academic journey, and current projects. This website serves as a window into my professional path and scientific interests.</p>        
+        <p style="height:20px"></p>
+            
+        <!-- Blog header -->
+        <div class="blog-header">
+            <h2><img style="float: inline-start;width:42px;height:42px;align-content:center;margin-right:-21px;" src="images/icons/notepad.png" alt="green notepad"/> 
+                Recent Posts
+            </h2>
+         </div>
+            
+        <!-- Container for both columns of blog -->
+        <div class="blog"> 
+             <!-- Posts that appear on the left side -->
+            <div class="leftcolumn">
 
-        <footer class="site-footer">
-            <div class="image-text-row">
-                <img src="images/logos/criucpq-ulaval-logo.png" alt="CRIUCPQ research centre official logo" class="side-image" loading="lazy">
-                <div class="side-text">
-                    <h3>Gagné Lab — CRIUCPQ</h3>
-                    <p>The Gagné lab is located at the CRIUCPQ - a Université Laval research center. Our team focuses on innovative translational research in cardiopulmonary sciences and molecular mechanisms.</p>
+                <div class="blogpost">
+                    <h2>May 27th, 2026</h2>
+                    <h1>I have been selected to present my small cell lung carcinoma research at the World Conference for Lung Cancer (WCLC) 2026 in Seoul!</h1>
+                    <div class="img-fancy">
+                        <img src="images/posts/WCLC_announcement.png">
+                        <h3>Upcoming poster presentation and abstract publication in the Journal of Thoracic Oncology (JTO)</h3>
+                    </div>
+                    <p>I am happy to announce that my abstract has been accepted by the International Association for the Study of Lung Cancer (IASLC) for a poster presentation at the World Conference for Lung Cancer (WCLC) 2026 in Seoul, Republic of Korea. I will present my research on small cell lung carcinoma (SCLC) on the morning of September 15th, 2026.</p>
+                        <div class="blogpost-inset">
+                            <p style="margin-bottom: -12px;"><strong>Abstract Title:</strong></p>
+                            <p style="font-size: 20px; margin-left: -4px;"><strong>Survival-informed transcriptomic classification of resected SCLC with improved prognostic and TME discrimination</strong></p>
+                            <p><strong>Session:</strong> P3.13 - Small Cell Lung Cancer and Neuroendocrine Tumors</p>
+                            <p style="margin-top: -12px;"><strong>Date & Time:</strong> Tuesday Sep 15, 2026 9:30 AM - 11:00 AM</p>
+                        </div>
+                    <p>If you are a fellow WCLC 2026 attendee, feel free to come visit my poster or reach out and connect with me over email or via my LinkedIn page. I will be attending the welcome reception and the IASLC celebration night.</p>
+                    <p>I look forward to attending my first major international conference and learning about the newest global developments in pulmonary oncology research. I hope to meet many presenters and attendees, and I am excited to share my work with the world!</p>
                 </div>
-            </div>
-            <p>I coded this website myself with HTML, CSS, and Javascript in VScode using github pages. 
-                Check out the source code on my <a href="http://www.github.com/camrynbass">Github <img width=12px src="images/logos/github_logo.png" alt="Github logo" /></a> page</p>
-            <p>&copy; 2026 Camryn Bass. All rights reserved.</p>
-        </footer>
 
-    </body>
+            </div>background-color: var(--bg-medium);
+                
+            <!-- Posts that appear on the right side -->
+            <div class="rightcolumn">
+
+                <div class="blogpost">
+                    <h2>December, 2026</h2>
+                    <h1>Lung cancer and small cell lung carcinoma</h1>
+                    <div class="row">
+                        <div class="imgcolumn" style="rotate: -45deg;">
+                            <img src="images/icons/dna.png" alt="DNA icon">
+                        </div>
+                        <div class="imgcolumn">
+                            <img src="images/icons/lungs.png" alt="Lungs icon">
+                        </div>
+                        <div class="imgcolumn">
+                            <img src="images/icons/cig.png" alt="Cigarette icon">
+                        </div>
+                    </div>
+                    <p>Lung cancer is split into two major categories: small cell lung carcinoma (SCLC) and non-small cell lung carcinoma (NSCLC). </p>
+                    <p>SCLC is generally considered more aggressive than NSCLC, and more difficult to treat clinically. Most patients are diagnosed with SCLC when it is already at an advanced stage. In Canada, the median overall survival (OS) of all SCLC patients after diagnosis is 9.5 months. Patients with advanced SCLC have a median OS of 6.5 months, and patients with early-stage SCLC have a median OS of 19.8 months.</p>
+                    <p>These poor survival rates persist despite years of research on this topic</p>
+                </div> 
+
+                <div class="blogpost">
+                    <h2>May 26, 2026</h2>
+                    <h1>Oral Presentation: Retraite scientifique en oncologie 2026, Manoir du Lac-Delage, Québec, QC. May 26, 2026</h1>
+                    <img src="images/posts/oncologie_retraite_presentation_titlepage.png" alt="Retraite scientifique en oncologie 2026 poster presentation" style="background-color: #263421;">
+                    <p>Some text..</p>
+                </div>
+                    
+            </div>
+        </div>  
+
+        <!-- Blog footer -->
+        <div class="blog-footer">
+             <h2>End of post history...</h2>
+        </div>
+                
+    </main>
+            
+    <footer class="site-footer">
+        <div class="footer-row">
+            <img src="images/logos/criucpq-ulaval-logo.png" alt="CRIUCPQ research centre official logo" class="footer-image" loading="lazy">
+            <div class="footer-text">
+                <h3>Gagné Lab — CRIUCPQ</h3>
+                <p>The Gagné lab is located at the CRIUCPQ - a Université Laval research center. Our team focuses on innovative translational research in cardiopulmonary sciences and molecular mechanisms.</p>
+            </div>
+        </div>
+        <p>I coded this website myself with HTML, CSS, and Javascript in VScode using github pages. Check out the source code on my <a href="http://www.github.com/camrynbass">Github <img width=12px src="images/logos/github_logo.png" alt="Github logo" /></a> page</p>
+        <p>&copy; 2026 Camryn Bass. All rights reserved.</p>
+    </footer>
+                
+</body>
 </html>
