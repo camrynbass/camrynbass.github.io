@@ -409,6 +409,8 @@ main p {
 }
 
 .resume-header h2 {
+    padding-top: 0px;
+    margin-top: 0px;
     padding-right: 10px;
     padding-left: 16px;
     font-weight: bolder;
@@ -435,6 +437,7 @@ main p {
 
 .resume-section {
     background: var(--bg-lightest);
+    margin-top: 10px;
 }
 
 .resume-section h1 {
