@@ -183,6 +183,12 @@ main p {
     margin: 1rem 0;
 }
 
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
 /*  FOOTER ------------- */
 .site-footer {
     background-color: var(--bg-light);
