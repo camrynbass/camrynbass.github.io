@@ -18,18 +18,17 @@ body {
 
 /* ----- Colour palette ----- */
 :root {
-    /* Global scope colour palette 
-        EXAMPLE USE:
-        .body {
-            color: var(--bg-darkest);
-        }
-    */
+
     --bg-lightest: #e9f0e4;
+    --bg-lighter: #d6e4c6;
     --bg-light: #ccdeb8;
     --bg-mediumlight: #afc699;
     --bg-medium: #99ae84;
     --bg-darkest: #6b7c5a; 
     --border-dark: #313b26;
+    --text-light: #daefaf;
+    --text-medium: #536430;
+    --text-mediumdark: #304b2a;
     --text-dark: #1e2f1a;
     --border-grey: #d4d4d4;
 }
@@ -91,16 +90,22 @@ body {
     text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
     border-left: none;
     padding-left: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    line-height: 1em;
 }
 
 /* Credentials --------------- */
 .header-overlay h2 {
-    font-size: 2rem;
+    font-size: 1.75rem;
     color: white;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
     border-left: none;
     padding-left: 0;
-    margin-top: -1.25rem;
+    line-height: 1.1em;
+    padding-top: 4px;
+    margin-top: 0;
+    font-weight: 500;
 }
 
 /* Tagline ------------------- */
@@ -109,6 +114,7 @@ body {
     margin-top: 0;
     color: rgba(255,255,255,0.95);
     text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    font-weight: 400;
 }
 
 /* MAIN NAVIGATION BAR -------------------------------- */
@@ -180,14 +186,91 @@ main h1 {
 main p {
     font-size: 1.2rem;
     color: var(--text-dark);
-    margin: 1rem 0;
+    /* margin: 1rem 0; */
 }
 
 img {
     display: block;
-    max-width: 100%;
-    height: auto;
+    /* max-width: 100%; */
+    /* height: auto; */
 }
+
+table {
+    border-collapse: collapse;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    width: 96%;
+    margin: 2%;
+    /* min-width: 350px; */
+    /* margin: 26px 0; */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 2px solid var(--border-dark);
+}
+
+th,
+td {
+    border: 1px solid var(--border-dark);
+    padding: 10px 18px;
+    text-align: center;
+}
+
+thead th {
+    background-color: white;
+    font-weight: 600;
+    color: var(--text-dark);
+    border-bottom: 2px solid var(--border-grey);
+    font-variant: small-caps;
+    font-size: 17px;
+    border: 1px solid var(--border-dark);
+}
+
+tbody tr:nth-child(even) {
+    background-color: white;
+}
+tbody tr:nth-child(odd) {
+    background-color: var(--border-grey);
+}
+
+tbody td:first-child {
+    text-align: left;
+    font-weight: 500;
+}
+
+caption {
+    caption-side: top;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+    text-align: center;
+}
+
+details {
+    font-size: 16px;
+    width: 100%;
+}
+
+details > summary {
+  padding: 2px 6px;
+  width: 100%;
+  background-color: var(--bg-medium);
+  border: none;
+  box-shadow: 3px 3px 4px black;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+details:open > summary {
+  background-color: var(--bg-medium);
+}
+
+details > p {
+    background-color: var(--bg-lighter);
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
 
 /*  FOOTER ------------- */
 .site-footer {
@@ -214,7 +297,7 @@ img {
     width: 1200px;
     max-width: 40vw;
     height: auto;
-    display: block;
+    display:inline;
     border-radius: 12px;
     background: rgba(255, 255, 255, 0);
     padding: 6px;
@@ -239,9 +322,17 @@ img {
 }
 
 .footer-text p {
-    font-size: 1rem;
+    font-size: 12px;
     line-height: 1.5;
     color: var(--text-dark);
+}
+
+.footer-inline-logo {
+    display: inline-block;
+    width: auto;
+    height: 12px;              /* matches the surrounding font size */
+    vertical-align: -0.125em; /* nudges it to sit on the text baseline */
+    margin-left: 0.15em;;
 }
 
 /* BLOG ------------------------------------------*/
@@ -334,19 +425,44 @@ img {
 }
 
 .blogpost p {
-    line-height: 1em;
-    padding: 0 0.8em;
+    line-height: 1.2em;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
     font-size: 16px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+/* .blogpost sup {
+    vertical-align: text-top;
+    font-family: monospace;
+    font-weight: 600;
+    font-size: ;
+} */
+
+sup, sub {
+  font-size: calc(0.5em + 4px);
+  vertical-align: baseline;
+  position: relative; 
+  top: calc(-0.5 * 0.83 * 2 * (1em - 4px)); 
+  /* Simplified top: calc(-0.83em + 3.32px) */
+}
+
+sub {
+  top: calc(0.25 * 0.75 * 2 * (1em - 4px)); 
+  /* Simplified top: calc(0.42em - 1.66px) */
 }
 
 .blogpost-inset {
     width: 95%;
     background: var(--bg-light);
-    border: 8px solid var(--bg-medium);
+    border-top: 8px solid var(--bg-medium);
+    border-bottom: 8px solid var(--bg-medium);
+    border-right: 4px solid var(--bg-medium);
+    border-left: 4px solid var(--bg-medium);
     padding-top: 2px;
     margin-left: 2.5%;
-    margin-right: 2.5%;
-    /* border: -4px; */
+    margin-right: 2.5%; 
 }
 
 .blog-footer {
@@ -360,11 +476,10 @@ img {
     background-color: var(--border-dark);
     padding-left: 4px;
     padding-right: 4px;
-    padding-top: 8px;
+    padding-top: 1%;
     padding-bottom: 8px;
     margin-left:4px;
     margin-right:4px;
-    margin-bottom: -8px;
     width:98%;
     align-self: center;
     justify-self: center;
@@ -373,17 +488,50 @@ img {
 .imgcolumn {
     float: left;
     width: 33.33%;
-    padding: 5px;
-    padding-left: 1%;
-    padding-right: 1%;
-    margin-top: 8px;
-    padding-bottom: 8px;
+    padding-bottom: 15px;
+    padding-left: 2%;
+    padding-right: 2%;
+    margin-top: 0;
+    padding-bottom: 20px;
+    justify-self: center;
+    align-self: center;
 }
+
 
 .blog:after {
     content: "";
     display: table;
     clear: both;
+}
+
+/* Links ====================================================================== */
+
+a {
+  outline-color: transparent;
+}
+
+a:link {
+  color: var(--text-mediumdark);
+  font-weight: 600;
+}
+
+a:visited {
+  color: var(--text-medium);
+}
+
+a:focus {
+  text-decoration: none;
+  background: var(--bg-medium);
+}
+
+a:hover {
+  text-decoration: none;
+  background: var(--bg-mediumlight);
+}
+
+a:active {
+  background: var(--bg-darkest);
+  color: var(--text-light);
 }
 
 /* Resume formatting ========================================================== */
@@ -446,14 +594,15 @@ img {
     background: var(--bg-mediumlight);
     font-weight: bolder;
     font-size: 24px;
-    text-indent: 16px;
+    padding-left: 1rem;
     border-top: 16px solid var(--bg-lightest);
     border-bottom: 4px solid var(--bg-medium);
+    line-height: 1.5em;
 }
 
 .resume-section h2 {
     font-size: 18px;
-    text-indent: 24px;
+    margin-left: 16px;
     line-height: 1em;
     padding-top: 6px;
 }
@@ -471,29 +620,36 @@ img {
 .resume-section h4 {
     font-weight: 550;
     padding-right: 16px;
-    padding-top: 8px;
+    padding-left: 32px;
+    padding-top: 12px;
     font-size: 18px;
-    text-indent: 44px;
+    /* text-indent: 44px; */
     line-height: 1em;
 }
 
 .resume-item-label {
     float: left;
     width: 60%;
+    line-height: 1em;
 }
 
 .resume-item-date {
     float: right;
     width: 40%;
+    line-height: 1em;
 }
 
 .resume-section p {
-    text-indent: 44px;
-    font-size: 16px;
     font-weight: 400;
     padding-top: 0px;
-    margin-top: -4px;
     font-size: 18px;
+    line-height: 1.1em;
+    margin-left: 32px;
+    margin-right: 8px;
+    text-indent: none;
+    margin-top: 2px;
+    text-indent: 0px;
+    margin-bottom: 2px;
 }
 
 
@@ -510,7 +666,6 @@ img {
     }
     .header-overlay p {
         font-size: 18px;
-        margin-top: 5px;
         line-height: 1.25rem;
     }
 
@@ -572,7 +727,7 @@ img {
         max-width: 180px;
         width: 60%;
     }
-    
+
 }
 
 @media (max-width: 480px) {
@@ -596,7 +751,6 @@ img {
     }
     .header-overlay p {
         font-size: 16px;
-        margin-top: 5px;
         line-height: 1.25rem;
     }
 
