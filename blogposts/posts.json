@@ -1,6 +1,27 @@
 {
   "posts": [
     {
+      "file": "blogpost_2026-10-10.html",
+      "date": "2026-10-10",
+      "title": "Poster presentation at JS-DBMBP 2026",
+      "categories": ["conferences", "presentations"],
+      "column": "any"
+    },
+    {
+      "file": "blogpost_2026-10-08.html",
+      "date": "2026-10-08",
+      "title": "Poster presentation at JMM 2026",
+      "categories": ["conferences", "presentations"],
+      "column": "any"
+    },
+    {
+      "file": "blogpost_2026-10-04.html",
+      "date": "2026-10-04",
+      "title": "Poster presentation at Congrès AIRS 2026",
+      "categories": ["conferences", "presentations"],
+      "column": "any"
+    },
+    {
       "file": "blogpost_2026-07-08.html",
       "date": "2026-07-08",
       "title": "Oral presentation at JSR 2026",
@@ -13,6 +34,13 @@
       "title": "WCLC 2026 Seoul",
       "categories": ["conferences", "publications"],
       "column": "left"
+    },
+    {
+      "file": "blogpost_2025-03-25.html",
+      "date": "2025-03-25",
+      "title": "Oncology retreat presentation 2026",
+      "categories": ["conferences", "presentations"],
+      "column": "any"
     },
     {
       "file": "blogpost_2025-12-01.html",
