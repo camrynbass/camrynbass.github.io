@@ -1,0 +1,25 @@
+{
+  "posts": [
+    {
+      "file": "blogpost_2026-07-08.html",
+      "date": "2026-07-08",
+      "title": "Oral presentation at JSR 2026",
+      "categories": ["conferences", "presentations"],
+      "column": "any"
+    },
+    {
+      "file": "blogpost_2026-05-27.html",
+      "date": "2026-05-27",
+      "title": "WCLC 2026 Seoul",
+      "categories": ["conferences", "publications"],
+      "column": "left"
+    },
+    {
+      "file": "blogpost_2025-12-01.html",
+      "date": "2025-12-01",
+      "title": "SCLC background primer",
+      "categories": ["research"],
+      "column": "right"
+    }
+  ]
+}

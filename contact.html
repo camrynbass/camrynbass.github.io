@@ -1,64 +1,168 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
     <title>Camryn Bass | Personal Portfolio</title>
-    <meta name="description" content="Learn about Camryn Bass: professional background, research interests, and work with the Gagné Lab at CRIUCPQ.">
-    <meta name="keywords" content="Camryn Bass, Cam Bass, Gagné Lab, CRIUCPQ, researcher, portfolio">
-    <meta name="author" content="Camryn Bass">
-    <link rel="stylesheet" href="source/display_settings.css">
-</head>
+    <meta
+      name="description"
+      content="Learn about Camryn Bass: professional background, research interests, and work with the Gagné Lab at CRIUCPQ."
+    />
+    <meta
+      name="keywords"
+      content="Camryn Bass, Cam Bass, Gagné Lab, CRIUCPQ, researcher, portfolio"
+    />
+    <meta name="author" content="Camryn Bass" />
+    <link rel="stylesheet" href="source/display_settings.css" />
+  </head>
 
-<body>
+  <body>
     <!-- Header with headshot and background gif (non-sticky) -->
     <div class="header-wrapper" id="headerImageContainer">
-        <!-- Headshot on the left side if screens are wide enough -->
-        <div class="header-left" style="background-image: url('images/CamBass_headshot_whitebg.JPG');"></div>
-        <!-- animated header background -->
-        <div class="header-right" style="background-image: url('images/green_header.htm');">
-            <div class="header-overlay">
-                <h1>Camryn Bass</h1>
-                <h2>B.Sc., Master's of molecular medicine student</h2>
-                <hr />
-                <p>Computational Biologist | Cancer Researcher | Gagné Lab </p>
-                <!-- Disclaimer about how incomplete this is. 
+      <!-- Headshot on the left side if screens are wide enough -->
+      <div
+        class="header-left"
+        style="
+          background-image: url(&quot;images/CamBass_headshot_whitebg.JPG&quot;);
+        "
+      ></div>
+      <!-- animated header background -->
+      <div
+        class="header-right"
+        style="background-image: url(&quot;images/green_header.gif&quot;)"
+      >
+        <div class="header-overlay">
+          <h1>Camryn Bass</h1>
+          <h2>B.Sc., Master's of molecular medicine student</h2>
+          <hr />
+          <p>Computational Biologist | Cancer Researcher | Gagné Lab</p>
+          <!-- Disclaimer about how incomplete this is. 
                 I hope nobody sees this site until it's ready...-->
-                <p style="font-size: 16px;">* This website is under construction!
-            </div>
+          <p style="font-size: 16px">* This website is under construction!</p>
         </div>
+      </div>
     </div>
-        
+
     <!-- Primary navigation header (sticky) -->
     <header class="sticky-nav-header" id="siteHeader">
-        <nav class="main-nav" aria-label="Main navigation">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="resume.html">Resumé</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html" aria-current="page">Contact</a></li>
-           </ul>
-        </nav>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <!-- <li><a href="about.html">About Me</a></li> -->
+          <!-- <li><a href="resume.html">Resumé</a></li> -->
+          <!-- <li><a href="projects.html">Projects</a></li> -->
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
     </header>
-        
+
     <!-- Home page -->
     <main>
-        Send me an email at camrynjbass@gmail.com
+      <div class="contact-form">
+        <form id="contact-form">
+          <label for="fname">First Name</label>
+          <input
+            type="text"
+            id="fname"
+            name="fname"
+            placeholder="Your name.."
+            required
+          />
+
+          <label for="lname">Last Name</label>
+          <input
+            type="text"
+            id="lname"
+            name="lname"
+            placeholder="Your last name.."
+            required
+          />
+
+          <label for="subject">Message</label>
+          <textarea
+            id="subject"
+            name="subject"
+            placeholder="Write something.."
+            style="height: 200px"
+            required
+          ></textarea>
+
+          <input type="submit" value="Submit" />
+        </form>
+
+        <p
+          id="form-status"
+          role="status"
+          aria-live="polite"
+          style="margin-top: 12px; font-size: 15px"
+        ></p>
+      </div>
+
+      <script>
+        const CONTACT_USER = "camrynjbass";
+        const CONTACT_DOMAIN = "gmail.com"; // ← replace with your actual domain
+        const CONTACT_EMAIL = `${CONTACT_USER}@${CONTACT_DOMAIN}`;
+
+        document
+          .getElementById("contact-form")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const fname = document.getElementById("fname").value.trim();
+            const lname = document.getElementById("lname").value.trim();
+            const message = document.getElementById("subject").value.trim();
+
+            const subject = `Contact form: ${fname} ${lname}`;
+            const body = `Name: ${fname} ${lname}\r\n` + `\r\n` + `${message}`;
+
+            const mailtoUrl =
+              `mailto:${CONTACT_EMAIL}` +
+              `?subject=${encodeURIComponent(subject)}` +
+              `&body=${encodeURIComponent(body)}`;
+
+            window.location.href = mailtoUrl;
+
+            // fallback in case no mail client is configured.
+            const status = document.getElementById("form-status");
+            status.textContent = `Your email app should have opened. If it didn't, you can reach me directly at ${CONTACT_EMAIL}.`;
+          });
+      </script>
     </main>
-    
+
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="footer-row">
-            <img src="images/logos/criucpq-ulaval-logo.png" alt="CRIUCPQ research centre official logo" class="footer-image" loading="lazy">
-            <div class="footer-text">
-                <h3>Gagné Lab — CRIUCPQ</h3>
-                <p>The Gagné lab is located at the CRIUCPQ - a Université Laval research center. Our team focuses on innovative translational research in cardiopulmonary sciences and molecular mechanisms.</p>
-            </div>
+      <div class="footer-row">
+        <img
+          src="images/logos/criucpq-ulaval-logo.png"
+          alt="CRIUCPQ research centre official logo"
+          class="footer-image"
+          loading="lazy"
+        />
+        <div class="footer-text">
+          <h3>Gagné Lab — CRIUCPQ</h3>
+          <p>
+            The Gagné lab is located at the Centre de Recherche de l'Institut Universitaire de Cardiologie et de Pneumologie de Québec (CRIUCPQ) - a Université Laval research center. </p>
         </div>
-        <p>I coded this website myself with HTML, CSS, and Javascript in VScode using github pages. Check out the source code on my <a href="http://www.github.com/camrynbass">Github <img width=12px src="images/logos/github_logo.png" alt="Github logo" /></a> page</p>
-        <p>&copy; 2026 Camryn Bass. All rights reserved.</p>
+        
+      </div>
+      <p>Our multi-disciplinary team performs innovative pathological, molecular, and bioinformatic research on lung cancer, focusing on biomarker discovery and answering unmet clinical needs to improve patient outcome, experience, and prognostic accuracy.</p>
+      <p style="height: 20px;"> </p>
+      <p>
+        I coded this website myself with HTML, CSS, and Javascript in VScode
+        using github pages. Check out the source code on my
+        <a href="http://www.github.com/camrynbass"
+          >Github
+          <img
+            src="images/logos/github_logo.png"
+            alt="Github logo"
+            class="footer-inline-logo"
+        /></a>
+        page
+      </p>
+      <p>&copy; 2026 Camryn Bass. All rights reserved.</p>
     </footer>
-                
-</body>
+  </body>
 </html>
